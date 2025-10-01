@@ -1,0 +1,7 @@
+<map id="cone_gen.h" name="cone_gen.h">
+<area shape="rect" id="Node000001" title="Заголовочный файл класса ConeGen." alt="" coords="45,5,141,31"/>
+<area shape="rect" id="Node000002" href="$point3d_8h.html" title="Заголовочный файл структуры point3d." alt="" coords="5,79,88,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="88,32,64,69,60,66,83,30"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="112,79,171,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="103,30,128,66,124,69,99,33"/>
+</map>

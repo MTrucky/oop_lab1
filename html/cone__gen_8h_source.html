@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Lab 1: Исходный файл cone_gen.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Lab 1
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">cone_gen.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="cone__gen_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#ifndef CONE_GEN_H</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#define CONE_GEN_H</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="point3d_8h.html">point3d.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="};">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="classConeGen.html">   15</a></span><span class="keyword">class </span><a class="code hl_class" href="classConeGen.html">ConeGen</a> {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="classConeGen.html#a26f548db7e6230f60fa660e3e45743e6">   17</a></span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="classConeGen.html#a26f548db7e6230f60fa660e3e45743e6">radius</a>;  </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classConeGen.html#a1b4404fccf635aee11b6670fabd7ac6f">   18</a></span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="classConeGen.html#a1b4404fccf635aee11b6670fabd7ac6f">height</a>;  </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="classConeGen.html#a110f5170bfeae82284dc4bc993eeafe7">   19</a></span>    <a class="code hl_struct" href="structpoint3d.html">point3d</a> <a class="code hl_variable" href="classConeGen.html#a110f5170bfeae82284dc4bc993eeafe7">center</a>; </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <a class="code hl_class" href="classConeGen.html">ConeGen</a>(<span class="keywordtype">double</span> r, <span class="keywordtype">double</span> h, <span class="keyword">const</span> <a class="code hl_struct" href="structpoint3d.html">point3d</a>&amp; c = <a class="code hl_struct" href="structpoint3d.html">point3d</a>());</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classConeGen.html#a224edfb9519d5a2c403336687691b231">rnd</a>(<a class="code hl_struct" href="structpoint3d.html">point3d</a>* p);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classConeGen.html#a49ea3ff5aabf3a7979cf265fdf2a904e">setParams</a>(<span class="keywordtype">double</span> r, <span class="keywordtype">double</span> h, <span class="keyword">const</span> <a class="code hl_struct" href="structpoint3d.html">point3d</a>&amp; c = <a class="code hl_struct" href="structpoint3d.html">point3d</a>());</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    std::string <a class="code hl_function" href="classConeGen.html#a867667be8cbb5518645509c354859405">getParams</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classConeGen.html#a12887a3456b039e04f83645af1731be1">saveSet</a>(<span class="keyword">const</span> std::string&amp; filename) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>};</div>
+</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclassConeGen_html"><div class="ttname"><a href="classConeGen.html">ConeGen</a></div><div class="ttdoc">Класс для генерации точек внутри конуса</div><div class="ttdef"><b>Definition</b> cone_gen.h:15</div></div>
+<div class="ttc" id="aclassConeGen_html_a110f5170bfeae82284dc4bc993eeafe7"><div class="ttname"><a href="classConeGen.html#a110f5170bfeae82284dc4bc993eeafe7">ConeGen::center</a></div><div class="ttdeci">point3d center</div><div class="ttdoc">Центр основания конуса</div><div class="ttdef"><b>Definition</b> cone_gen.h:19</div></div>
+<div class="ttc" id="aclassConeGen_html_a12887a3456b039e04f83645af1731be1"><div class="ttname"><a href="classConeGen.html#a12887a3456b039e04f83645af1731be1">ConeGen::saveSet</a></div><div class="ttdeci">void saveSet(const std::string &amp;filename) const</div><div class="ttdoc">Сохраняет параметры в файл</div><div class="ttdef"><b>Definition</b> cone_gen.cpp:55</div></div>
+<div class="ttc" id="aclassConeGen_html_a1b4404fccf635aee11b6670fabd7ac6f"><div class="ttname"><a href="classConeGen.html#a1b4404fccf635aee11b6670fabd7ac6f">ConeGen::height</a></div><div class="ttdeci">double height</div><div class="ttdoc">Высота конуса</div><div class="ttdef"><b>Definition</b> cone_gen.h:18</div></div>
+<div class="ttc" id="aclassConeGen_html_a224edfb9519d5a2c403336687691b231"><div class="ttname"><a href="classConeGen.html#a224edfb9519d5a2c403336687691b231">ConeGen::rnd</a></div><div class="ttdeci">void rnd(point3d *p)</div><div class="ttdoc">Генерирует случайную точку внутри конуса</div><div class="ttdef"><b>Definition</b> cone_gen.cpp:16</div></div>
+<div class="ttc" id="aclassConeGen_html_a26f548db7e6230f60fa660e3e45743e6"><div class="ttname"><a href="classConeGen.html#a26f548db7e6230f60fa660e3e45743e6">ConeGen::radius</a></div><div class="ttdeci">double radius</div><div class="ttdoc">Радиус основания конуса</div><div class="ttdef"><b>Definition</b> cone_gen.h:17</div></div>
+<div class="ttc" id="aclassConeGen_html_a49ea3ff5aabf3a7979cf265fdf2a904e"><div class="ttname"><a href="classConeGen.html#a49ea3ff5aabf3a7979cf265fdf2a904e">ConeGen::setParams</a></div><div class="ttdeci">void setParams(double r, double h, const point3d &amp;c=point3d())</div><div class="ttdoc">Устанавливает параметры конуса</div><div class="ttdef"><b>Definition</b> cone_gen.cpp:42</div></div>
+<div class="ttc" id="aclassConeGen_html_a867667be8cbb5518645509c354859405"><div class="ttname"><a href="classConeGen.html#a867667be8cbb5518645509c354859405">ConeGen::getParams</a></div><div class="ttdeci">std::string getParams() const</div><div class="ttdoc">Возвращает параметры конуса в виде строки</div><div class="ttdef"><b>Definition</b> cone_gen.cpp:48</div></div>
+<div class="ttc" id="apoint3d_8h_html"><div class="ttname"><a href="point3d_8h.html">point3d.h</a></div><div class="ttdoc">Заголовочный файл структуры point3d.</div></div>
+<div class="ttc" id="astructpoint3d_html"><div class="ttname"><a href="structpoint3d.html">point3d</a></div><div class="ttdoc">Структура для хранения точки в 3D пространстве</div><div class="ttdef"><b>Definition</b> point3d.h:13</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

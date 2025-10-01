@@ -1,0 +1,5 @@
+<map id="ConeGen" name="ConeGen">
+<area shape="rect" id="Node000001" title="Класс для генерации точек внутри конуса" alt="" coords="5,93,87,119"/>
+<area shape="rect" id="Node000002" href="$structpoint3d.html" title="Структура для хранения точки в 3D пространстве" alt="" coords="11,5,81,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="49,45,49,93,43,93,43,45"/>
+</map>
