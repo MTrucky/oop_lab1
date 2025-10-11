@@ -5,41 +5,16 @@
 @date 2025-09-28
 
 @details
-Этот скрипт использует библиотеки matplotlib и numpy для создания
-3D-визуализации точек, сгенерированных программой на C++.
-
-Скрипт читает данные из файла points.txt, создает интерактивный
-3D-график и отображает точки внутри конуса.
-
-@note Для работы требуются установленные библиотеки:
-- matplotlib
-- numpy
-
-@see cone_gen
-@see point3d
+Упрощенная версия визуализации точек в конусе.
 """
 
 import matplotlib.pyplot as plt
 import numpy as np
+from mpl_toolkits.mplot3d import Axes3D
 
 def main():
     """
     @brief Основная функция скрипта визуализации.
-    
-    @details
-    Читает данные из файла points.txt, создает 3D-график
-    и отображает точки в интерактивном окне. Функция включает
-    обработку ошибок для случаев когда файл не найден или
-    имеет неправильный формат.
-    
-    @throws FileNotFoundError если файл points.txt не существует
-    @throws ValueError если данные в файле имеют неправильный формат
-    
-    @code
-    # Пример использования:
-    # python3 visual.py
-    # Открывается окно с 3D визуализацией точек
-    @endcode
     """
     try:
         # Чтение данных из файла
@@ -49,32 +24,49 @@ def main():
         
         # Создание 3D-графика
         print("Создание 3D визуализации...")
-        fig = plt.figure(figsize=(12, 9))
+        
+        fig = plt.figure(figsize=(10, 8))
         ax = fig.add_subplot(111, projection='3d')
         
-        # Отображение точек
-        scatter = ax.scatter(x, y, z, c=z, cmap='viridis', marker='o', 
-                           alpha=0.7, s=30, label='Случайные точки')
+        # Простое отображение точек
+        scatter = ax.scatter(x, y, z, c=z, cmap='viridis', 
+                           alpha=0.7, s=20, marker='o')
         
-        # Настройка осей и меток
-        ax.set_xlabel('Ось X', fontsize=12, labelpad=10)
-        ax.set_ylabel('Ось Y', fontsize=12, labelpad=10)
-        ax.set_zlabel('Ось Z', fontsize=12, labelpad=10)
-        ax.set_title('3D визуализация точек внутри конуса', fontsize=14, pad=20)
+        # СТАНДАРТНЫЕ НАСТРОЙКИ MATPLOTLIB ДЛЯ ИНТУИТИВНОГО УПРАВЛЕНИЯ
         
-        # Добавление цветовой шкалы
-        cbar = fig.colorbar(scatter, ax=ax, shrink=0.6, aspect=20)
-        cbar.set_label('Высота (Z)', rotation=270, labelpad=15)
+        # Стандартные подписи осей
+        ax.set_xlabel('X', fontsize=12, fontweight='bold')
+        ax.set_ylabel('Y', fontsize=12, fontweight='bold')
+        ax.set_zlabel('Z', fontsize=12, fontweight='bold')
         
-        # Добавление легенды
-        ax.legend(loc='upper right')
+        # Простой заголовок
+        ax.set_title('Точки в конусе', fontsize=14, pad=20)
         
-        # Настройка вида
-        ax.view_init(elev=20, azim=45)
+        # Цветовая шкала
+        cbar = fig.colorbar(scatter, ax=ax, shrink=0.6)
+        cbar.set_label('Высота Z', fontsize=10)
         
-        # Отображение графика
-        print("Отображение графика...")
-        plt.tight_layout()
+        # Простая сетка
+        ax.grid(True, linestyle='--', alpha=0.3)
+        
+        # Полупрозрачные плоскости для лучшего восприятия глубины
+        ax.xaxis.pane.set_alpha(0.1)
+        ax.yaxis.pane.set_alpha(0.1)
+        ax.zaxis.pane.set_alpha(0.1)
+        
+        # Начальный вид
+        ax.view_init(elev=25, azim=45)
+        
+        # Автоматическое масштабирование для всех точек
+        ax.set_box_aspect([1, 1, 1])  # Сохраняем пропорции
+        
+        print("Загрузка графика...")
+        print("Управление:")
+        print("- ЛКМ + движение: вращение")
+        print("- ПКМ + движение: масштабирование") 
+        print("- Колесо мыши: приближение/отдаление")
+        print("- R: сброс вида")
+        
         plt.show()
         
         print("Визуализация завершена успешно!")
@@ -86,11 +78,4 @@ def main():
         print(f"Ошибка при визуализации: {e}")
 
 if __name__ == "__main__":
-    """
-    @brief Точка входа скрипта.
-    
-    @details
-    Проверяет, что скрипт запущен напрямую, а не импортирован как модуль,
-    и вызывает основную функцию.
-    """
     main()
