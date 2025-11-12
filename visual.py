@@ -3,9 +3,6 @@
 @brief Скрипт для 3D визуализации точек из файла points.txt
 @author Perevozchikov M
 @date 2025-09-28
-
-@details
-Упрощенная версия визуализации точек в конусе.
 """
 
 import matplotlib.pyplot as plt
@@ -13,69 +10,58 @@ import numpy as np
 from mpl_toolkits.mplot3d import Axes3D
 
 def main():
-    """
-    @brief Основная функция скрипта визуализации.
-    """
     try:
-        # Чтение данных из файла
         print("Чтение данных из points.txt...")
         data = np.loadtxt('points.txt')
-        x, y, z = data[:, 0], data[:, 1], data[:, 2]
         
-        # Создание 3D-графика
+        if data.size == 0:
+            print("Файл points.txt пуст!")
+            return
+            
+        # Обработка случая с одной точкой
+        if data.ndim == 1:
+            x, y, z = data[0], data[1], data[2]
+            x, y, z = [x], [y], [z]
+        else:
+            x, y, z = data[:, 0], data[:, 1], data[:, 2]
+        
+        print(f"Загружено {len(x)} точек")
+        
         print("Создание 3D визуализации...")
         
+        # Создание фигуры и 3D оси
         fig = plt.figure(figsize=(10, 8))
         ax = fig.add_subplot(111, projection='3d')
         
-        # Простое отображение точек
-        scatter = ax.scatter(x, y, z, c=z, cmap='viridis', 
-                           alpha=0.7, s=20, marker='o')
+        # Правильные подписи осей (соответствуют системе координат C++)
+        ax.scatter(x, y, z, c=z, cmap='viridis', alpha=0.7, s=20)
         
-        # СТАНДАРТНЫЕ НАСТРОЙКИ MATPLOTLIB ДЛЯ ИНТУИТИВНОГО УПРАВЛЕНИЯ
+        ax.set_xlabel('Y (→)')
+        ax.set_ylabel('X (↑)')
+        ax.set_zlabel('Z (⬆)')
         
-        # Стандартные подписи осей
-        ax.set_xlabel('X', fontsize=12, fontweight='bold')
-        ax.set_ylabel('Y', fontsize=12, fontweight='bold')
-        ax.set_zlabel('Z', fontsize=12, fontweight='bold')
+        ax.set_title('Точки в конусе')
         
-        # Простой заголовок
-        ax.set_title('Точки в конусе', fontsize=14, pad=20)
-        
-        # Цветовая шкала
-        cbar = fig.colorbar(scatter, ax=ax, shrink=0.6)
-        cbar.set_label('Высота Z', fontsize=10)
-        
-        # Простая сетка
+        # Сетка
         ax.grid(True, linestyle='--', alpha=0.3)
         
-        # Полупрозрачные плоскости для лучшего восприятия глубины
-        ax.xaxis.pane.set_alpha(0.1)
-        ax.yaxis.pane.set_alpha(0.1)
-        ax.zaxis.pane.set_alpha(0.1)
-        
-        # Начальный вид
+        # Начальный угол обзора
         ax.view_init(elev=25, azim=45)
         
-        # Автоматическое масштабирование для всех точек
-        ax.set_box_aspect([1, 1, 1])  # Сохраняем пропорции
+        # Сохраняем пропорции
+        ax.set_box_aspect([1, 1, 1])  
         
         print("Загрузка графика...")
-        print("Управление:")
-        print("- ЛКМ + движение: вращение")
-        print("- ПКМ + движение: масштабирование") 
-        print("- Колесо мыши: приближение/отдаление")
-        print("- R: сброс вида")
         
+        # Показать график
         plt.show()
         
-        print("Визуализация завершена успешно!")
+        print("Визуализация завершена!")
         
     except FileNotFoundError:
         print("Ошибка: файл points.txt не найден!")
-        print("Убедитесь, что программа на C++ была запущена и сохранила данные.")
     except Exception as e:
-        print(f"Ошибка при визуализации: {e}")
+        print(f"Ошибка: {e}")
 
 if __name__ == "__main__":
     main()
